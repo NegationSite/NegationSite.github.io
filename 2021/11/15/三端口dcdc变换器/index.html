@@ -19,25 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="还不够理性">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="本文涉及的是本人在2021年全国电子设计大赛参赛的经历以及我们组对于2021年C题三端口DC-DC变换器设计的方案。水平有限，仅限参考！具体的文件可以参考我的GITHUB仓库,其中附有本文所设计的大部分资料。 第一部分：参赛经历这个部分只是我的一些七七八八八的主观感受和一些流水账，凌乱而又杂碎。 写在最前面的话本人只是来自湖南的一个2019级普普通通的电子信息工程专业的在读生，所处的学校不是985">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三端口dcdc变换器">
+<meta property="og:url" content="http://example.com/2021/11/15/%E4%B8%89%E7%AB%AF%E5%8F%A3dcdc%E5%8F%98%E6%8D%A2%E5%99%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="还不够理性">
+<meta property="og:description" content="本文涉及的是本人在2021年全国电子设计大赛参赛的经历以及我们组对于2021年C题三端口DC-DC变换器设计的方案。水平有限，仅限参考！具体的文件可以参考我的GITHUB仓库,其中附有本文所设计的大部分资料。 第一部分：参赛经历这个部分只是我的一些七七八八八的主观感受和一些流水账，凌乱而又杂碎。 写在最前面的话本人只是来自湖南的一个2019级普普通通的电子信息工程专业的在读生，所处的学校不是985">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-14T17:43:07.000Z">
+<meta property="article:modified_time" content="2022-12-15T18:41:53.008Z">
 <meta property="article:author" content="Negation">
+<meta property="article:tag" content="电赛">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/11/15/%E4%B8%89%E7%AB%AF%E5%8F%A3dcdc%E5%8F%98%E6%8D%A2%E5%99%A8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/11/15/%E4%B8%89%E7%AB%AF%E5%8F%A3dcdc%E5%8F%98%E6%8D%A2%E5%99%A8/","path":"2021/11/15/三端口dcdc变换器/","title":"三端口dcdc变换器"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo</title>
+<title>三端口dcdc变换器 | Hexo</title>
   
 
 
@@ -69,7 +72,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Hexo</h1>
+      <p class="site-title">Hexo</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -91,7 +94,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -104,6 +107,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E5%8F%82%E8%B5%9B%E7%BB%8F%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text">第一部分：参赛经历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D"><span class="nav-number">1.1.</span> <span class="nav-text">写在最前面的话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E6%AF%94%E8%B5%9B%E4%B9%8B%E5%89%8D"><span class="nav-number">1.2.</span> <span class="nav-text">正式比赛之前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%AD%A6%E6%A0%A1%E6%9A%91%E6%9C%9F%E7%9A%84%E9%9B%86%E8%AE%AD"><span class="nav-number">1.3.</span> <span class="nav-text">关于学校暑期的集训</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021%E5%B9%B4%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9BC%E9%A2%98%E7%9A%84%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">2021年电子设计大赛C题的相关分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E2021%E5%B9%B4%E7%94%B5%E8%B5%9B%E7%9A%84%E6%9D%90%E6%96%99%E6%B8%85%E5%8D%95"><span class="nav-number">2.1.</span> <span class="nav-text">关于2021年电赛的材料清单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A1%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">审题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="nav-number">2.3.</span> <span class="nav-text">主要拓扑结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E7%94%B5%E6%BA%90"><span class="nav-number">2.4.</span> <span class="nav-text">辅助电源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%8E%8B%E7%94%B5%E6%B5%81%E6%A3%80%E6%B5%8B"><span class="nav-number">2.5.</span> <span class="nav-text">电压电流检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF"><span class="nav-number">2.6.</span> <span class="nav-text">MOS管驱动电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E5%8A%9F%E7%8E%87%E7%82%B9%E8%B7%9F%E8%B8%AA%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.7.</span> <span class="nav-text">最大功率点跟踪的实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub%E4%B8%AD%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99%E4%B8%80%E8%A7%88%E8%A1%A8"><span class="nav-number">3.</span> <span class="nav-text">GitHub中相关资料一览表</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -137,165 +141,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/16/test-my-site/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Negation">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="还不够理性">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/12/16/test-my-site/" class="post-title-link" itemprop="url">test_my_site</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-12-16 00:52:07" itemprop="dateCreated datePublished" datetime="2022-12-16T00:52:07+08:00">2022-12-16</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/16/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Negation">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="还不够理性">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/12/16/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-12-16 00:50:50" itemprop="dateCreated datePublished" datetime="2022-12-16T00:50:50+08:00">2022-12-16</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/15/%E4%B8%89%E7%AB%AF%E5%8F%A3dcdc%E5%8F%98%E6%8D%A2%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -309,13 +165,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="name" content="三端口dcdc变换器 | Hexo">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/15/%E4%B8%89%E7%AB%AF%E5%8F%A3dcdc%E5%8F%98%E6%8D%A2%E5%99%A8/" class="post-title-link" itemprop="url">三端口dcdc变换器</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          三端口dcdc变换器
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -345,7 +201,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>本文涉及的是本人在2021年全国电子设计大赛参赛的经历以及我们组对于2021年C题三端口DC-DC变换器设计的方案。水平有限，仅限参考！具体的文件可以参考我的<a target="_blank" rel="noopener" href="https://github.com/Negation-zou/National-Undergraduate-Electronic-Design-Contest">GITHUB仓库</a>,其中附有本文所设计的大部分资料。</p>
+        <p>本文涉及的是本人在2021年全国电子设计大赛参赛的经历以及我们组对于2021年C题三端口DC-DC变换器设计的方案。水平有限，仅限参考！具体的文件可以参考我的<a target="_blank" rel="noopener" href="https://github.com/Negation-zou/National-Undergraduate-Electronic-Design-Contest">GITHUB仓库</a>,其中附有本文所设计的大部分资料。</p>
 <h2 id="第一部分：参赛经历"><a href="#第一部分：参赛经历" class="headerlink" title="第一部分：参赛经历"></a>第一部分：参赛经历</h2><p>这个部分只是我的一些七七八八八的主观感受和一些流水账，凌乱而又杂碎。</p>
 <h3 id="写在最前面的话"><a href="#写在最前面的话" class="headerlink" title="写在最前面的话"></a>写在最前面的话</h3><p>本人只是来自湖南的一个2019级普普通通的电子信息工程专业的在读生，所处的学校不是985也不是211，它很普通。我这个专业也不是学校的强势专业，学院的经费也很有限。但幸运的是，我的两个队友都很强，我是被带飞的那个人，我个人的水平只是同届参赛队伍所有队员中处于中下游水平。如果是我的两个队友来做这个仓库，他们一定能够做的更好。只不过是恰好因为我比较菜，所以有空余时间做一下这点微不足道的事情。</p>
 <h3 id="正式比赛之前"><a href="#正式比赛之前" class="headerlink" title="正式比赛之前"></a>正式比赛之前</h3><p>实打实算，我大概今年7月才算正确的跨入电赛的大门。之前确实学校组织过校赛或者其他之类的，但是都只能够算是小打小闹。我们小组是在7月初才成立的。之后便一直以小组的形式参加学校的集训。当时参加校赛选拔时，我们仨分别属于三个不同的队伍，在当时看来，我们只是为了获得一个参赛资格而配凑在一起。但是我们的羁绊越来越深，他们两个对我很包容，我很感激他们俩！在参加今年的比赛之前，我们参赛实属艰辛。本来以为比赛会在8月4日如期举办。但是7月底8月初，湖南疫情突然有点点失控，有传言是电赛延迟一周举办。但是当时长沙的几个学校立马就疏散留校的学生，紧急让他们回家，我们学校的负责人则是在等有关的通知，关于疏散留校学生的通知、电赛如期举行或者是电赛延期举行的通知。我也不知道他在等哪个，但是他就是在等通知。等到有具体的通知（电赛延期，延期时间确定在9月14日往后）时，已经是8月2号。在当时看来，湖南的疫情是比较严重的，学校已经无法让所有留校的同学离校了，会存在安全隐患。一鼓作气，再而衰，三而竭。我8月份的训练是基本没有进步。9月开学，学院搬迁到了新校区，实验室也只能是搬家。搬家，带来了新的环境，外加上缺乏状态，确确实实影响挺大。在正式比赛之前的两三天，实验室几乎处于没有人的状态（参赛人员中有许多的2018级的同学，他们还要同时准备考研）。</p>
@@ -412,7 +268,6 @@
 <li>基于改进电导增量法的光伏MPPT控制</li>
 </ol>
 
-      
     </div>
 
     
@@ -420,11 +275,25 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/%E7%94%B5%E8%B5%9B/" rel="tag"># 电赛</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/12/16/hello-world/" rel="next" title="Hello World">
+                  Hello World <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
