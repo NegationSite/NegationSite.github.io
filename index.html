@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -177,7 +177,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-12-16 12:56:32 / Modified: 15:04:03" itemprop="dateCreated datePublished" datetime="2022-12-16T12:56:32+08:00">2022-12-16</time>
+      <time title="Created: 2022-12-16 12:56:32 / Modified: 16:03:38" itemprop="dateCreated datePublished" datetime="2022-12-16T12:56:32+08:00">2022-12-16</time>
     </span>
 
   
@@ -190,8 +190,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>本文是使用GitHub Page + <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">hexo</a> 在WIN中来搭建一个属于自己的个人博客。如果遇上下载链接打不开或者下载缓慢，以及安装失败的情况，那就考虑使用魔法上网。</p>
-<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><p>本部分需要安装hexo，官方也提供了一个<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">使用文档</a>，安装 Hexo 相当简单，需要先安装下列应用程序即可：</p>
+          <p>本文是使用GitHub Page + <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">hexo</a> 在WIN中来搭建一个属于自己的个人博客。如果遇到下载链接打不开或者下载缓慢，以及安装失败的情况，那就考虑使用魔法上网,同时建议路径中不要包含中文。</p>
+<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><p>本部分需要安装hexo，官方也提供了一个<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">使用文档</a>，安装 Hexo 相当简单，需要先安装下列应用程序：</p>
 <ol>
 <li>Node.js (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本)</li>
 <li>Git</li>
@@ -206,7 +206,7 @@
 <p>在文件夹页面点击鼠标右键，出现<strong>Git Bash Here</strong> 和<strong>Git GUI Here</strong> 就说明安装成功，之后则需要对git进行一番配置：</p>
 <p>打开<strong>Git Bash Here</strong>，输入如下命令：</p>
 <blockquote>
-<p>git config –global user.name “你的GitHub用户名”    # 在””中输入,下同<br>git config –global user.email “你的GitHub注册邮箱”</p>
+<p>git config –global user.name “你的GitHub用户名”    # 在引号里面输入,下同<br>git config –global user.email “你的GitHub注册邮箱”</p>
 </blockquote>
 <p>例如：</p>
 <blockquote>
@@ -227,7 +227,7 @@
 <p>按下三次回车后在C:\Users\Username.ssh中生成<strong>id_rsa.pub</strong> 文件，打开文件并全部复制。打开Github,在sitting页面中选择<strong>SSH and GPG keys</strong>，选择建立一个新的<a target="_blank" rel="noopener" href="https://github.com/settings/ssh/new"><strong>ssh key</strong></a>，在<em>key</em> 中粘贴你的ssh key。然后点击<strong>Add ssh key</strong>即可 </p>
 <p>我们可以在<strong>Git Bash Here</strong>中输入测试是否成功：</p>
 <blockquote>
-<p>ssh <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#109;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#109;</a></p>
+<p>ssh <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#111;&#109;">&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#111;&#109;</a></p>
 </blockquote>
 <h3 id="Node-js-的安装"><a href="#Node-js-的安装" class="headerlink" title="Node.js 的安装()"></a>Node.js 的安装()</h3><p>安装 <a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Node.js</a> 需要请确保勾选 Add to PATH 选项（默认已勾选），也会同时安装及npm。安装成功后可以输入命令查看其安装版本（version）检测是否安装成功：</p>
 <blockquote>
@@ -267,8 +267,8 @@
 <p>打开 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> ，就可以看到你将要布置的博客大概是一个什么样子。</p>
 <pre><code>存在一个打不开的情况。我没有遇到过，但是通过搜索可以发现有人出现这种情况并提供了一个解决方式。
 </code></pre>
-<p>在GitHub中创建一个<em>username.github.io</em>的仓库,例如：<strong>NegationSite.github.io</strong></p>
-<p>然后在站点配置文件_config.yml中找到<em>deploy</em>修改配置：</p>
+<p>在GitHub中创建一个 <em>username.github.io</em> 的仓库,例如：<strong>NegationSite.github.io</strong></p>
+<p>然后在站点配置文件_config.yml中找到 <em>deploy</em> 修改配置：</p>
 <blockquote>
 <p>deploy:<br> type:  git<br> repo:  <a target="_blank" rel="noopener" href="https://github.com/username/username.github.io.git">https://github.com/username/username.github.io.git</a>  #之前在GitHub创建仓库的完整路径+ .git<br> branch: master</p>
 </blockquote>
@@ -288,76 +288,63 @@
 <blockquote>
 <p>NegationSite.github.io</p>
 </blockquote>
-<p>就可以看到刚刚所部署的博客了！（可能需要等待一会）</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-      
-    </div>
+<p>就可以看到刚刚所部署的博客了！（可能需要等待一会）（部署失败可以考虑魔法上网）</p>
+<h2 id="整个过程中我遇到的一些问题"><a href="#整个过程中我遇到的一些问题" class="headerlink" title="整个过程中我遇到的一些问题"></a>整个过程中我遇到的一些问题</h2><h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><p>由于众所周知的原因，某些网站的链接可能会打不开从而使得在安装过程中出现问题，所以我建议全程打开梯子，这样会减少很多麻烦。</p>
+<h3 id="github无法连接邮箱"><a href="#github无法连接邮箱" class="headerlink" title="github无法连接邮箱"></a>github无法连接邮箱</h3><p>在GitHub的个人设置页面(&gt;sitting&gt;emails)取消选择<strong>Keep my email addresses private</strong></p>
+<h3 id="git的报错"><a href="#git的报错" class="headerlink" title="git的报错"></a>git的报错</h3><p>在装和使用过程中git会有一个报错：“warning: LF will be replaced by CRLF”，经过搜索，我输入了一条命令解决了这个问题：</p>
+<blockquote>
+<p>git config –global core.autocrlf false  </p>
+</blockquote>
+<p>但是这个解决方式似乎存在隐患，下面这个方式似乎更优。具体的我没有去探索了。</p>
+<blockquote>
+<p>git config –global core.autocrlf true</p>
+</blockquote>
+<h2 id="常用的一些命令"><a href="#常用的一些命令" class="headerlink" title="常用的一些命令"></a>常用的一些命令</h2><ol>
+<li><p>new </p>
+<blockquote>
+<p>hexo n “title”</p>
+</blockquote>
+<p>新建一篇文章。如果标题包含空格的话，需要使用引号括起来，否则可以不用。</p>
+</li>
+<li><p>clean </p>
+<blockquote>
+<p>hexo clean</p>
+</blockquote>
+<p> 清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br> 在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令</p>
+</li>
+<li><p>generate </p>
+<blockquote>
+<p>hexo g</p>
+</blockquote>
+<p>生成静态文件</p>
+</li>
+<li><p>server</p>
+<blockquote>
+<p>hexo s</p>
+</blockquote>
+<p> 启动服务器。默认情况下，访问网址为： <a target="_blank" rel="noopener" href="http://localhost:4000/%E3%80%82">http://localhost:4000/。</a></p>
+</li>
+<li><p>deploy</p>
+<blockquote>
+<p>hexo d</p>
+</blockquote>
+<p> 部署网站</p>
+</li>
+</ol>
+<p>通常情况下，使用</p>
+<blockquote>
+<p>hexo clean<br>hexo g<br>hexo s</p>
+</blockquote>
+<p>然后打开<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E6%9F%A5%E7%9C%8B%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%83%85%E5%86%B5%E3%80%82%E7%A1%AE%E8%AE%A4%E6%97%A0%E8%AF%AF%E4%B9%8B%E5%90%8E">http://localhost:4000/，查看博客的情况。确认无误之后</a></p>
+<blockquote>
+<p>hexo clean<br>hexo g<br>hexo d</p>
+</blockquote>
+<p>之后你就能在你的网站上看到更新的博客了！</p>
+<h2 id="建站参考"><a href="#建站参考" class="headerlink" title="建站参考"></a>建站参考</h2><p><a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">markdown语法参考</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs">hexo的使用文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/552639819">筱筱琪的《2022【保姆级教程】含泪搭建hexo博客》</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">吴润的《GitHub+Hexo 搭建个人网站详细教程》</a></p>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/16/test-my-site/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Negation">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="还不够理性">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/12/16/test-my-site/" class="post-title-link" itemprop="url">test_my_site</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-12-16 00:52:07" itemprop="dateCreated datePublished" datetime="2022-12-16T00:52:07+08:00">2022-12-16</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          
       
     </div>
 
