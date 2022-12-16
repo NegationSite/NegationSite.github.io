@@ -177,7 +177,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-12-16 12:56:32 / Modified: 17:32:33" itemprop="dateCreated datePublished" datetime="2022-12-16T12:56:32+08:00">2022-12-16</time>
+      <time title="Created: 2022-12-16 12:56:32 / Modified: 17:44:49" itemprop="dateCreated datePublished" datetime="2022-12-16T12:56:32+08:00">2022-12-16</time>
     </span>
 
   
@@ -227,7 +227,7 @@
 <p>按下三次回车后在C:\Users\Username.ssh中生成<strong>id_rsa.pub</strong> 文件，打开文件并全部复制。打开Github,在sitting页面中选择<strong>SSH and GPG keys</strong>，选择建立一个新的<a target="_blank" rel="noopener" href="https://github.com/settings/ssh/new"><strong>ssh key</strong></a>，在<em>key</em> 中粘贴你的ssh key。然后点击<strong>Add ssh key</strong>即可 </p>
 <p>我们可以在<strong>Git Bash Here</strong>中输入测试是否成功：</p>
 <blockquote>
-<p>ssh <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#x6d;</a></p>
+<p>ssh <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x69;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;</a></p>
 </blockquote>
 <h3 id="Node-js-的安装"><a href="#Node-js-的安装" class="headerlink" title="Node.js 的安装()"></a>Node.js 的安装()</h3><p>安装 <a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Node.js</a> 需要请确保勾选 Add to PATH 选项（默认已勾选），也会同时安装及npm。安装成功后可以输入命令查看其安装版本（version）检测是否安装成功：</p>
 <blockquote>
@@ -344,9 +344,14 @@
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs">hexo的使用文档</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/552639819">筱筱琪的《2022【保姆级教程】含泪搭建hexo博客》</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">吴润的《GitHub+Hexo 搭建个人网站详细教程》</a></p>
-<p>可以使用github建立一个远程仓库作为备份，之后每次使用只需要</p>
+<p>可以使用github建立一个远程仓库作为备份</p>
+<p>初次使用需要在github中建立一个新的仓库</p>
 <blockquote>
-<p>git push origin master</p>
+<p>git init          # 初始化仓库<br>git add .         # 添加文件到暂存区<br>git commit -m “wrote a readme file”   # 将暂存区内容添加到仓库<br>git remote add origin <a target="_blank" rel="noopener" href="https://github.com/xxxxx/blog.git">https://github.com/xxxxx/blog.git</a> # 添加到远程版本库<br>git push -u origin main     # 提交到Github</p>
+</blockquote>
+<p>之后每次使用只需要</p>
+<blockquote>
+<p>git add .<br>git commit -m “wrote a readme file”<br>git push origin master</p>
 </blockquote>
 <p>就可以完成备份！</p>
 
